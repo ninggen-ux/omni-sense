@@ -4,41 +4,47 @@
         "body": "Punggung tegak dan posisi tubuh sangat ideal. Pertahankan posisi ini demi kesehatan tulang belakangmu!",
         "img": "/img/nina_iseri/1.png",
         "backgroundColor": "#00f5d4",
-        "textColor": "#000"
+        "textColor": "#000",
+        "audio": ""
     },
     {
         "header": "Postur Cukup Baik",
         "body": "Posisi dudukmu masih oke, tapi sedikit lagi bisa lebih tegak. Jangan lupa sesekali rilekskan bahu.",
         "img": "/img/nina_iseri/2.png",
         "backgroundColor": "#fee440",
-        "textColor": "#000"
+        "textColor": "#000",
+        "audio": ""
     },
     {
         "header": "Awas Bungkuk!",
         "body": "Posisi tubuhmu terlalu membungkuk dan dekat dengan layar. Ayo tegakkan punggung dan tarik bahu ke belakang!",
         "img": "/img/nina_iseri/3.png",
         "backgroundColor": "#f15bb5",
-        "textColor": "#fff"
+        "textColor": "#fff",
+        "audio": ""
     },
     {
         "header": "Tolong Arahkan Ke Target!",
         "body": "Tolong arahkan ke target agar bisa melakukan scan!",
         "img": "/img/nina_iseri/4.png",
         "backgroundColor": "#9b5de5",
-        "textColor": "#fff"
+        "textColor": "#fff",
+        "audio": ""
     },
     {
         "header": "Tidak Terhubung ke Camera!",
         "body": "Silahkan hubungkan web dengan camera menggunakan IP input diatas atau tunggu sebentar!",
         "img": "/img/nina_iseri/5.png",
         "backgroundColor": "#9b5de5",
-        "textColor": "#fff"
+        "textColor": "#fff",
+        "audio": ""
     },
     {
         "header": "Mode Rebahan Detected!",
         "body": "Ini mau ngetik apa mau tidur? Kemiringan 160° – 180° begini mah mending pindah ke kasur sekalian!",
         "img": "/img/nina_iseri/6.png",
         "backgroundColor": "#9b5de5",
-        "textColor": "#fff"
+        "textColor": "#fff",
+        "audio": "" 
     }
 ]
