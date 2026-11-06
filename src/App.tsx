@@ -10,8 +10,9 @@ import { detectPostureStatus } from "./assets/misc/utils.ts";
 import "./assets/scss/app.scss";
 
 export default function App() {
-    interface UrlHost {
+    interface StreamUrl {
         host: string;
+        path: string;
     }
 
     const [poseLandmarkerResult, setPoseLandmarkerResult] =
@@ -19,7 +20,10 @@ export default function App() {
 
     const [postureIndex, setPostureIndex] = useState<number>(4);
 
-    const [urlHost, setUrlHost] = useState<UrlHost>();
+    const [streamUrl, setStreamUrl] = useState<StreamUrl>({
+        host: "0.0.0.0",
+        path: "video",
+    });
 
     const canvas = useRef<HTMLCanvasElement>(null);
     const img = useRef<HTMLImageElement>(null);
@@ -126,28 +130,58 @@ export default function App() {
         return () => {
             cancelAnimationFrame(animationFrameId);
         };
-    }, [poseLandmarkerResult, urlHost?.host]);
+    }, [poseLandmarkerResult, streamUrl?.host]);
 
-    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    function handleChange<T extends HTMLSelectElement | HTMLInputElement>(
+        e: React.ChangeEvent<T>,
+    ) {
         const { name, value } = e.target;
 
-        setUrlHost((prevState) => {
-            return { ...prevState, [name]: value } as UrlHost;
+        setStreamUrl((prevState) => {
+            return { ...prevState, [name]: value } as StreamUrl;
         });
     }
 
     return (
         <main>
-            <input
-                type="text"
-                name="host"
-                value={urlHost?.host}
-                onChange={handleChange}
-            />
+            <section
+                className="input-field-section"
+                style={
+                    postureIndex === 4
+                        ? {
+                              backgroundColor: cardData[4].backgroundColor,
+                              color: cardData[4].textColor,
+                          }
+                        : {
+                              backgroundColor: cardData[0].backgroundColor,
+                              color: cardData[0].textColor,
+                          }
+                }
+            >
+                <h1>Silahkan Masukkan IP Dibawah!</h1>
+                <div>
+                    <p>http://</p>
+                    <input
+                        type="text"
+                        name="host"
+                        value={streamUrl?.host}
+                        onChange={handleChange<HTMLInputElement>}
+                    />
+                    <p>/</p>
+                    <select
+                        name="path"
+                        onChange={handleChange<HTMLSelectElement>}
+                        value={streamUrl.path}
+                    >
+                        <option value="video">video</option>
+                        <option value="stream">stream</option>
+                    </select>
+                </div>
+            </section>
             <section className="img-section">
                 <img
                     ref={img}
-                    src={`http://${urlHost?.host}:8080/video`}
+                    src={`http://${streamUrl.host}/${streamUrl.path}`}
                     crossOrigin="anonymous"
                     onError={() => {
                         setPostureIndex(4);

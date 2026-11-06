@@ -7,6 +7,26 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 1rem 1rem;
+    .input-field-section {
+        width: 50%;
+        padding: 1rem;
+        border-radius: 5px;
+        div {
+            p {
+                display: inline;
+            }
+            input {
+                field-sizing: content;
+                border-radius: 5px;
+                padding: 0.05rem 0.3rem;
+                border: 1px solid rgb(107, 107, 107);
+            }
+            select {
+                border-radius: 5px;
+                border: 1px solid rgb(107, 107, 107);
+            }
+        }
+    }
     .img-section {
         width: 50%;
         aspect-ratio: 16/9;
